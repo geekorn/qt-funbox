@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'dejavu';
+  src: url('../fonts/dejavu-serif.condensed-webfont.woff2') format('woff2'),
+       url('../fonts/dejavu-serif.condensed-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$phone: 520px;
+$tablet: 960px;
+$laptop: 1200px;
+
+@mixin respond-to($media) {
+  @if $media == phone {
+    @media only screen and (max-width: $phone) { @content; }
+  }
+  @else if $media == tablet {
+    @media only screen and (max-width: $tablet - 1) { @content; }
+  }
+  @else if $media == laptop {
+    @media only screen and (max-width: $laptop) { @content; }
+  }
+}
+@function em($pxsize,$rembase:16px) {
+  @return ($pxsize/$rembase) + 0em
+}
+
+body {
+  margin: 0;
+}
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
+}
+ul {
+  list-style: none;
+}
+
+p {
+  margin: 0;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.container {
+  width: 1120px;
+  margin: 0 auto;
+}
