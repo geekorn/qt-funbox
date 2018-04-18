@@ -1,0 +1,12 @@
+mixin productCard(product)
+  .card
+    .card__header Сказочное заморское явство
+    .card__body
+      h2.card__title Нямушка 
+      .card__composition #{product.name}
+      ul.card__list
+        li.card__item #{product.amount} порций
+        li.card__item #{product.giftCount} #{declination(product.giftCount)} в подарок
+    .card__footer
+      .card__description Чего сидишь? Порадуй котэ, 
+        label.card__link купи.

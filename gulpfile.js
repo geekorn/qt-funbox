@@ -19,6 +19,7 @@ $.path.task.forEach(function(taskPath) {
   require(taskPath)();
 });
 
+
 $.gulp.task('sprite', )
 $.gulp.task('default', $.gulp.series(
   'clean',

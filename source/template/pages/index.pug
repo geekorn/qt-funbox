@@ -1,8 +1,14 @@
 extends ../_template
+include ../components/product-card
 
-block variables
-  - var title = 'Test page'
+include ../_misc/variables
 
 block content
-  h1 Тестовая страница
+  h1 Ты сегодня покормил кота?
+  .container
+    .products
+      each item in products 
+       +productCard(item)
+        
+      
       

@@ -1,0 +1,29 @@
+block variables
+  - var title = 'Test page';
+  - 
+    var products = [
+      {
+        name: 'с фуа-гра',
+        amount: 10,
+        giftCount: 1,
+        weight: 0.5,
+        description: 'Печень утки разварная с артишоками.'
+      },
+      {
+        name: 'с рыбой',
+        amount: 40,
+        giftCount: 2,
+        weight: 2,
+        description: 'Головы щучьи с чесноком да свежайшая сёмгушка.'
+      },
+      {
+        name: 'с курой',
+        amount: 100,
+        giftCount: 5,
+        weight: 5,
+        description: 'Филе из цыплят с трюфелями в бульоне.'
+      }
+    ];
+  - var declination = function (n) {
+  -    return ['мышь', 'мыши', 'мышей'][n % 10 === 1 && n % 100 !== 11 ? 0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2];
+  -  };
