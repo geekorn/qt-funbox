@@ -1,7 +1,7 @@
 @font-face {
-  font-family: 'dejavu';
-  src: url('../fonts/dejavu-serif.condensed-webfont.woff2') format('woff2'),
-       url('../fonts/dejavu-serif.condensed-webfont.woff') format('woff');
+  font-family: 'Exo';
+  src: url('../fonts/Exo20-Thin.woff2') format('woff2'),
+      url('../fonts/Exo20-Thin.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -27,25 +27,29 @@ $laptop: 1200px;
 
 body {
   margin: 0;
+  font-family: 'Trebuchet MS', sans-serif;
 }
-ul, ol {
+h1, 
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
-  padding: 0;
-  list-style-position: inside;
 }
 ul {
-  list-style: none;
-}
-
-p {
   margin: 0;
-
-  &:not(:last-child) {
-    margin-bottom: 20px;
-  }
+  padding: 0;
+  list-style: none;
+  list-style-position: inside;
 }
 
-.container {
-  width: 1120px;
-  margin: 0 auto;
+.wrapper {
+  min-height: 100vh;
+  padding-top: 47px;
+  background-image: url('../images/backgrounds/background-pattern.jpg');
+  background-repeat: repeat;
 }
+
+@import 'pages/main.scss';
+@import 'components/product-card.scss';
