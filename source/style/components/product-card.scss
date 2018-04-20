@@ -83,8 +83,9 @@
   
   &__description {
     text-align: center;
-    font-size: 0.8rem;
+    font-size: rem(13px);
     color: #ffffff;
+    text-shadow: 0 1px 1px #000000;
 
     &_selected,
     &_ended {
@@ -111,7 +112,7 @@
   position: relative;
   box-sizing: border-box;
   display: block;
-  width: $card-width;
+  min-width: $card-width;
   height: 100%;
   margin-bottom: 15px;
   padding: 4px;
@@ -133,7 +134,7 @@
     height: 100%;
     padding-top: 20px;
     padding-left: 44px;
-    padding-bottom: 275px;
+    padding-bottom: 290px;
     padding-right: 20px;
     border-radius: 9px;
     background: linear-gradient(135deg, transparent 28px, #ffffff 0);
@@ -141,7 +142,7 @@
   }
 
   &__title {
-    margin-bottom: 17px;
+    margin-bottom: 10px;
     color: $color-text-light;
 
     &_selected {
@@ -150,12 +151,13 @@
     }
   }
   &__name {
-    font-size: 3rem;
+    font-size: rem(48px);
+    line-height: 1;
   }
 
   &__composition {
     margin-bottom: 17px;
-    font-size: 1.5rem;
+    font-size: rem(24px);
     font-weight: bold;
   }
 
@@ -181,10 +183,10 @@
     background-color: $color-default;
     color: #ffffff;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: rem(21px);
 
     > span:first-child {
-      font-size: 2.6rem;
+      font-size: rem(42px);
       line-height: 0.8;
     }
   }
@@ -192,7 +194,7 @@
 
 .options {
   color: $color-text-light;
-  font-size: 0.875rem;
+  font-size: rem(14px);
 
   &__count {
     font-weight: bold;

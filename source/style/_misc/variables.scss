@@ -1,3 +1,4 @@
+$root-font-size: 16px;
 // width
 $container-width: 1120px;
 $card-width: 320px;
@@ -26,4 +27,7 @@ $laptop: 1200px;
   @else if $media == laptop {
     @media only screen and (max-width: $laptop) { @content; }
   }
+}
+@function rem($pxsize,$rembase:$root-font-size) {
+  @return ($pxsize/$rembase) + 0rem
 }
