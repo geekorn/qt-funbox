@@ -4,11 +4,13 @@ include ../components/product-card
 include ../_misc/variables
 
 block content
-  h1.page-title Ты сегодня покормил кота?
-  .container
-    .products
-      each item in products 
-       +productCard(item)
+  .flexContainer
+    .wrapper
+      .container
+        h1.page-title Ты сегодня покормил кота?
+        .products
+          each item in products 
+            +productCard(item)
         
       
       

@@ -3,25 +3,35 @@ block variables
   - 
     var products = [
       {
+        id: 1,
         name: 'с фуа-гра',
         amount: 10,
         giftCount: 1,
-        weight: 0.5,
-        description: 'Печень утки разварная с артишоками.'
+        weight: '0,5',
+        description: 'Печень утки разварная с артишоками.',
+        selected: false,
+        ended: false
       },
       {
+        id: 2,
         name: 'с рыбой',
         amount: 40,
         giftCount: 2,
         weight: 2,
-        description: 'Головы щучьи с чесноком да свежайшая сёмгушка.'
+        description: 'Головы щучьи с чесноком да свежайшая сёмгушка.',
+        selected: true,
+        ended: false
       },
       {
+        id: 3,
         name: 'с курой',
         amount: 100,
         giftCount: 5,
+        additionally: 'заказчик доволен',
         weight: 5,
-        description: 'Филе из цыплят с трюфелями в бульоне.'
+        description: 'Филе из цыплят с трюфелями в бульоне.',        
+        selected: false,
+        ended: true
       }
     ];
   - var declination = function (n) {

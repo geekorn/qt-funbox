@@ -1,6 +1,29 @@
 // width
 $container-width: 1120px;
+$card-width: 320px;
 
 //colors
-$color-blue: hsl(200, 90%, 85%);
-$color-blue-hover: hsl(200, 80%, 90%);
+$color-default: #1698d9;
+$color-default-hover: #2ea8e6;
+$color-selected: #d91667;
+$color-selected-hover: #e62e7a;
+$color-disabled: #b3b3b3;
+$color-disabled-description: #ffff66;
+
+$color-text-light: #666666;
+
+$phone: 520px;
+$tablet: 1020px;
+$laptop: 1200px;
+
+@mixin respond-to($media) {
+  @if $media == phone {
+    @media only screen and (max-width: $phone) { @content; }
+  }
+  @else if $media == tablet {
+    @media only screen and (max-width: $tablet - 1) { @content; }
+  }
+  @else if $media == laptop {
+    @media only screen and (max-width: $laptop) { @content; }
+  }
+}

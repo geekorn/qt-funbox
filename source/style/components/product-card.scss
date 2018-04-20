@@ -1,13 +1,131 @@
-.card {
-  box-sizing: border-box;
+.product { 
   position: relative;
-  width: 320px;
-  height: 1px;
-  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  
+  @include respond-to(phone) {
+    padding: 10px 0;
+  }
+
+  &__checkbox {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+
+    &:checked {
+       + .card {
+        background:linear-gradient(135deg, transparent 29px, $color-selected 0);
+
+        .card__weight {
+          background-color: $color-selected;
+        }
+
+        &:hover {
+          background:linear-gradient(135deg, transparent 29px, $color-selected-hover 0);
+
+          .card__weight {
+            background-color: $color-selected-hover;
+          }
+
+          .card__title {
+            &_default {
+              display: none;
+            }
+            &_selected {
+              display: block;
+            }
+          }
+        }
+      }
+
+      ~ .product__description{
+        &_default,
+        &_ended {
+          display: none;
+        }
+        &_selected {
+          display: block;
+        }
+      }
+    }
+
+    &:disabled {
+      + .card {
+        background:linear-gradient(135deg, transparent 29px, $color-disabled 0);
+        cursor: auto;
+
+        .card__body > *:not(.card__weight) {
+          color: $color-disabled;
+          opacity: 0.5;
+        }
+
+        .card__weight {
+          background-color: $color-disabled;
+        }
+      }
+
+      ~ .product__description {
+        &_default,
+        &_selected {
+          display: none;
+        }
+        &_ended {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__card {
+    flex-grow: 1;
+  }
+  
+  &__description {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #ffffff;
+
+    &_selected,
+    &_ended {
+      display: none;
+    }
+    &_ended {
+      color: $color-disabled-description;
+    }
+  }
+
+  &__link {
+    position: relative;
+    border-bottom: 1px dashed $color-default;
+    color: $color-default;
+    cursor: pointer;
+
+    &:hover {
+      border-bottom: none;
+    }
+  }
+}
+
+.card {
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  width: $card-width;
+  height: 100%;
+  margin-bottom: 15px;
   padding: 4px;
   border-radius: 11px;
-  background:linear-gradient(135deg, transparent 23px, $color-blue 0);
-  overflow: hidden;
+  background:linear-gradient(135deg, transparent 29px, $color-default 0);
+  cursor: pointer;
+
+  &:hover {
+    background:linear-gradient(135deg, transparent 29px, $color-default-hover 0);
+
+    .card__weight {
+      background-color: $color-default-hover;
+    }
+  }
 
   &__body {
     position: relative;
@@ -15,29 +133,68 @@
     height: 100%;
     padding-top: 20px;
     padding-left: 44px;
+    padding-bottom: 275px;
+    padding-right: 20px;
     border-radius: 9px;
-    background: url('../images/cat.png') no-repeat 60% 175%, linear-gradient(135deg, transparent 22px, #ffffff 0);
+    background: linear-gradient(135deg, transparent 28px, #ffffff 0);
+    overflow: hidden;
   }
 
   &__title {
+    margin-bottom: 17px;
+    color: $color-text-light;
+
+    &_selected {
+      display: none;
+      color: $color-selected-hover;
+    }
+  }
+  &__name {
     font-size: 3rem;
   }
 
   &__composition {
+    margin-bottom: 17px;
     font-size: 1.5rem;
+    font-weight: bold;
   }
 
+  &__image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 270px;
+    background: url('../images/cat.png') no-repeat 50% 0;
+  }
   &__weight {
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    bottom: 12px;
+    right: 12px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 81px;
     height: 81px;
     border-radius: 50%;
-    background-color: $color-blue;
+    background-color: $color-default;
     color: #ffffff;
+    text-align: center;
+    font-size: 1.3rem;
+
+    > span:first-child {
+      font-size: 2.6rem;
+      line-height: 0.8;
+    }
+  }
+}
+
+.options {
+  color: $color-text-light;
+  font-size: 0.875rem;
+
+  &__count {
+    font-weight: bold;
   }
 }

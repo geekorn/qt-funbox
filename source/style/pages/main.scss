@@ -1,9 +1,8 @@
 @import '../_misc/variables.scss';
 
 .container {
-  width: 100%;
+  width: calc(100% - 20px);
   max-width: $container-width;
-  margin: 0 auto;
 }
 
 .page-title {
@@ -17,4 +16,10 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin: 0 -10px;
+
+  @include respond-to(tablet) {
+    justify-content: center;
+    margin: 0;
+  }
 }

@@ -1,14 +1,27 @@
 mixin productCard(product)
   .product
-    .product__card.card
+    input.product__checkbox(id=`product-${product.id}` type="checkbox" disabled = product.ended ? true : false checked = product.selected ? true : false)
+    label.product__card.card(for=`product-${product.id}`)
       .card__body
-        .card__header Сказочное заморское явство
-        h2.card__title Нямушка 
+        p.card__title.card__title_default Сказочное заморское яство
+        p.card__title.card__title_selected Котэ не одобряет?
+        h2.card__name Нямушка 
         .card__composition #{product.name}
-        ul.card__list
-          li.card__item #{product.amount} порций
-          li.card__item #{product.giftCount} #{declination(product.giftCount)} в подарок
-        .card__weight #{product.weight}кг
-    .product__footer
-      .product__description Чего сидишь? Порадуй котэ, 
-        label.card__link купи.
+        ul.card__options.options
+          li.options__item 
+            span.options__count #{product.amount} 
+            | порций
+          if product.giftCount != 0
+            li.options__item 
+              span.options__count #{product.giftCount > 1 ? product.giftCount : ''} 
+              | #{declination(product.giftCount)} в подарок
+          if product.additionally
+            li.options__item #{product.additionally}
+        .card__image
+        .card__weight 
+          span #{product.weight}
+          span кг
+    p.product__description.product__description_ended Печалька, #{product.name} закончился.
+    p.product__description.product__description_default Чего сидишь? Порадуй котэ, 
+      label.product__link(for=`product-${product.id}`) купи.
+    p.product__description.product__description_selected #{product.description} 
