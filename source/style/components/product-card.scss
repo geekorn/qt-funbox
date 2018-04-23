@@ -14,27 +14,27 @@
     opacity: 0;
 
     &:checked {
-       + .card {
+      + .card {
         background:linear-gradient(135deg, transparent 29px, $color-selected 0);
 
         .card__weight {
           background-color: $color-selected;
+        }        
+      }
+
+      + .card_selected:hover {
+        background:linear-gradient(135deg, transparent 29px, $color-selected-hover 0);
+
+        .card__weight {
+          background-color: $color-selected-hover;
         }
 
-        &:hover {
-          background:linear-gradient(135deg, transparent 29px, $color-selected-hover 0);
-
-          .card__weight {
-            background-color: $color-selected-hover;
+        .card__title {
+          &_default {
+            display: none;
           }
-
-          .card__title {
-            &_default {
-              display: none;
-            }
-            &_selected {
-              display: block;
-            }
+          &_selected {
+            display: block;
           }
         }
       }
