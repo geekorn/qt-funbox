@@ -19,13 +19,13 @@ window.onload = function () {
     let product = checkbox.parentNode;
     let card = product.querySelector('.card');
 
-    if (checkbox.checked) {
       card.onmouseleave = function() {
+        if (checkbox.checked) {
         card.classList.add('card_selected');
-      }
     } else {
       card.classList.remove('card_selected');
     }  
+  }
   })  
 
   // products.addEventListener("mouseover", function(e) {
