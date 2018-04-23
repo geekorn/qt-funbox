@@ -20,9 +20,9 @@ window.onload = function () {
     let card = product.querySelector('.card');
 
     if (checkbox.checked) {
-      // card.onmouseleave = function() {
-      //   console.log('leave')
-      card.classList.add('card_selected');
+      card.onmouseleave = function() {
+        card.classList.add('card_selected');
+      }
     } else {
       card.classList.remove('card_selected');
     }  
