@@ -9,32 +9,25 @@ window.onload = function () {
   const checkedCard = products.querySelectorAll('.product__checkbox');
 
   checkedCard.forEach(function(input) {
+    const card = input.parentNode.querySelector('.card');
+
     if (input.checked) {
-      input.parentNode.querySelector('.card').classList.add('card_selected');
+      card.classList.add('card_selected');
     }
-  })
+  });
     
   products.addEventListener("change", function(e) {
-    let checkbox = e.target;
-    let product = checkbox.parentNode;
-    let card = product.querySelector('.card');
+    const checkbox = e.target;
+    const product = checkbox.parentNode;
+    const card = product.querySelector('.card');
 
-      card.onmouseleave = function() {
-        if (checkbox.checked) {
+    card.onmouseleave = function() {
+      if (checkbox.checked) {
         card.classList.add('card_selected');
-    } else {
+      } 
+    }
+    if (!checkbox.checked) {
       card.classList.remove('card_selected');
     }  
-  }
-  })  
-
-  // products.addEventListener("mouseover", function(e) {
-  //   let target = e.target;
-  //   let flag = false;
-
-  //   while (target != this) {
-  //     if (target.classList.contains('card')) break;
-
-  //     target = target.parentNode;
-  //   }
+  })
 };
