@@ -19,7 +19,16 @@
 
         .card__weight {
           background-color: $color-selected;
-        }        
+        }
+        .card__description {
+          &_state_default,
+          &_state_ended {
+            display: none;
+          }
+          &_state_selected {
+            display: block;
+          }
+        }
       }
 
       + .card_selected:hover {
@@ -29,23 +38,13 @@
           background-color: $color-selected-hover;
         }
 
-        .card__title {
-          &_default {
+        .card__category {
+          &_state_default {
             display: none;
           }
-          &_selected {
+          &_state_selected {
             display: block;
           }
-        }
-      }
-
-      ~ .product__description{
-        &_default,
-        &_ended {
-          display: none;
-        }
-        &_selected {
-          display: block;
         }
       }
     }
@@ -55,7 +54,7 @@
         background:linear-gradient(135deg, transparent 29px, $color-disabled 0);
         cursor: auto;
 
-        .card__body > *:not(.card__weight) {
+        .card__wrapper > *:not(.card__weight, .card__description) {
           color: $color-disabled;
           opacity: 0.5;
         }
@@ -63,15 +62,15 @@
         .card__weight {
           background-color: $color-disabled;
         }
-      }
 
-      ~ .product__description {
-        &_default,
-        &_selected {
-          display: none;
-        }
-        &_ended {
-          display: block;
+        .card__description {
+          &_state_default,
+          &_state_selected {
+            display: none;
+          }
+          &_state_ended {
+            display: block;
+          }
         }
       }
     }
@@ -79,32 +78,6 @@
 
   &__card {
     flex-grow: 1;
-  }
-  
-  &__description {
-    text-align: center;
-    font-size: rem(13px);
-    color: #ffffff;
-    text-shadow: 0 1px 1px #000000;
-
-    &_selected,
-    &_ended {
-      display: none;
-    }
-    &_ended {
-      color: $color-disabled-description;
-    }
-  }
-
-  &__link {
-    position: relative;
-    border-bottom: 1px dashed $color-default;
-    color: $color-default;
-    cursor: pointer;
-
-    &:hover {
-      border-bottom: none;
-    }
   }
 }
 
@@ -114,7 +87,7 @@
   display: block;
   min-width: $card-width;
   height: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   padding: 4px;
   border-radius: 11px;
   background:linear-gradient(135deg, transparent 29px, $color-default 0);
@@ -128,7 +101,7 @@
     }
   }
 
-  &__body {
+  &__wrapper {
     position: relative;
     box-sizing: border-box;
     height: 100%;
@@ -138,24 +111,26 @@
     padding-right: 20px;
     border-radius: 9px;
     background: linear-gradient(135deg, transparent 28px, #ffffff 0);
-    overflow: hidden;
+    // overflow: hidden;
   }
 
-  &__title {
+
+  &__category {
     margin-bottom: 8px;
     color: $color-text-light;
 
-    &_selected {
+    &_state_selected {
       display: none;
       color: $color-selected-hover;
     }
   }
-  &__name {
+
+  &__title {
     font-size: rem(48px);
     line-height: 1;
   }
 
-  &__composition {
+  &__subtitle {
     margin-bottom: 17px;
     font-size: rem(24px);
     font-weight: bold;
@@ -168,6 +143,7 @@
     width: 100%;
     height: 270px;
     background: url('../images/cat.png') no-repeat 50% 0;
+    border-radius: inherit;
   }
   &__weight {
     position: absolute;
@@ -189,6 +165,39 @@
       padding-top: 4px;
       font-size: rem(42px);
       line-height: 1;
+    }
+  }
+
+  &__footer {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: calc(100% + 4px);
+    padding-top: 20px;
+  }
+    
+  &__description {
+    display: none;
+    text-align: center;
+    font-size: rem(13px);
+    color: #ffffff;
+    text-shadow: 0 1px 1px #000000;
+
+    &_state_ended {
+      color: $color-disabled-description;
+    }
+    &_state_default {
+      display: block;
+    }
+  }
+  &__link {
+    position: relative;
+    border-bottom: 1px dashed $color-default;
+    color: $color-default;
+    cursor: pointer;
+
+    &:hover {
+      border-bottom: none;
     }
   }
 }
