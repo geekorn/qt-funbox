@@ -54,10 +54,13 @@
         background:linear-gradient(135deg, transparent 29px, $color-disabled 0);
         cursor: auto;
 
-        .card__wrapper > *:not(.card__weight, .card__description) {
+        .card__wrapper > *:not(.card__weight):not(.card__footer) {
           color: $color-disabled;
           opacity: 0.5;
         }
+        // .card__wrapper .card__description {
+        //   opacity: 1;
+        // }
 
         .card__weight {
           background-color: $color-disabled;
@@ -111,7 +114,6 @@
     padding-right: 20px;
     border-radius: 9px;
     background: linear-gradient(135deg, transparent 28px, #ffffff 0);
-    // overflow: hidden;
   }
 
 
