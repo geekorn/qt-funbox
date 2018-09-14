@@ -1,0 +1,12 @@
+extends ../_template
+include ../components/product-card
+
+include ../_misc/variables
+
+block content
+  main.page
+    section.content
+      h1.content__title Ты сегодня покормил кота?
+      ul.products
+        each item in products 
+          +productCard(item)

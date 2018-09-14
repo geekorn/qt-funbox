@@ -1,12 +1,25 @@
 extends ../_template
-include ../components/product-card
 
 include ../_misc/variables
 
 block content
-  main.page
-    section.content
-      h1.content__title Ты сегодня покормил кота?
-      ul.products
-        each item in products 
-          +productCard(item)
+  div.page
+    header.page__header
+      h1.page__title Квалификационные задания для разработчиков 
+        span HTML/CSS
+      nav.page__navigation.navigation
+        ul.navigation__list
+          li.navigation__item
+            a.navigation__link(href="level1.html") Level 1
+          li.navigation__item
+            a.navigation__link.navigation__link_colorized(href="level2.html") Level 2
+    main.page__body
+      div.page__container
+        
+        include ../components/aboutme
+        include ../components/level1
+        include ../components/level2
+
+        
+
+

@@ -4,6 +4,10 @@ $container-width: 1140px;
 $card-width: 320px;
 
 //colors
+$color-text-default: #404040;
+$color-text-green: #92d050;
+$color-text-orange: #e36c0a;
+
 $color-default: #1698d9;
 $color-default-hover: #2ea8e6;
 $color-selected: #d91667;
@@ -14,7 +18,7 @@ $color-disabled-description: #ffff66;
 $color-text-light: #666666;
 
 $phone: 520px;
-$tablet: 1020px;
+$tablet: 1040px;
 $laptop: 1200px;
 
 @mixin respond-to($media) {

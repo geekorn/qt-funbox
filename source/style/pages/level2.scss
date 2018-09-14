@@ -1,0 +1,40 @@
+@import '../_misc/variables.scss';
+
+.page { /* for fix bug with min-height in IE11 */
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, rgba(#000000, 0.5) 0, transparent 50%, rgba(#000000, 0.5) 100%), url('../images/backgrounds/background-pattern.jpg') repeat;
+
+  &__title {
+    margin-bottom: 12px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 2.25rem;
+    font-family: 'Exo', sans-serif;
+    font-weight: normal;
+    text-shadow: 0 1px 1px #000000;
+  }
+}
+
+.products {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+  width: calc(100% - 20px);
+  max-width: $container-width;
+  // margin: 0 -10px;
+
+  @include respond-to(tablet) {
+    justify-content: center;
+    margin: 0;
+  }
+}
