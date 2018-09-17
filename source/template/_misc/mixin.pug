@@ -1,0 +1,7 @@
+mixin section(id, title, titleClass)
+  section.page__section.section(id= id)
+    header.section__header
+      h2.title.section__title(class= titleClass)= title
+    div.section__body
+      if block
+          block

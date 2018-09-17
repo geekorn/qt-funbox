@@ -1,7 +1,9 @@
-section.page__section.section
-  header.section__header
-    h2.section__title.section__title_color_orange Level 2
-  div.section__body
+include ../_misc/mixin
+
++section('level2', 'Level 2', 'section__title_color_orange')
+  .section__description
+    p.
+      В этом разделе представленны ссылки на реализацию тестового задания.
     a(href="https://github.com/geekorn/qt-funbox") Ссылка на репозиторий
     br
-    a(href="https://geekorn.github.io/data/funbox/") Ссылка на результат
+    a(href="/level2.html") Ссылка на результат
