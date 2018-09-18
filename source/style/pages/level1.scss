@@ -1,0 +1,44 @@
+.questions {
+  margin-top: 30px;
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+  &__title {
+    margin-bottom: 10px;
+    font-family: runescape;
+    font-size: 25px;
+    color: $color-text-green;
+  }
+
+  &__description {
+    margin-bottom: 10px;
+  }
+}
+.answers {
+
+  &__list {
+    list-style: disc inside;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    padding-top: 10px;
+    padding-left: 20px;
+    max-width: 100%;
+    height: 150px;
+
+    &-field {
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      padding: 5px;
+    }
+  }
+}

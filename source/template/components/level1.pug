@@ -8,14 +8,14 @@ include ../_misc/answers
   ul.questions
     each item in questions
       li.questions__item.question
-        div.title.question__title #{item.id}
-        p.question__description #{item.question}
+        div.questions__title #{item.id}
+        p.questions__description #{item.question}
         if item.list
-          ul.question__list
+          ul.answers__list
             each l in item.list
-              li #{l.q}
-                div.question__answer
-                  textarea.qustion__answer(name="", cols="100", rows="10") #{l.a}
+              li.answers__item #{l.q}
+                div.answers__text
+                  textarea.answers__text-field #{l.a}
         else
-          div.question__answer
-            textarea.qustion__answer(name="", cols="100", rows="10") #{item.answer}
+          div.answers__text
+            textarea.answers__text-field #{item.answer}

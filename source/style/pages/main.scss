@@ -74,32 +74,3 @@
     }
   }
 }
-.questions {
-  &__item {
-    &:not(:last-child) {
-      margin-bottom: 30px;
-    }
-  }
-}
-.question {
-  margin-top: 30px;
-  &__title {
-    margin-bottom: 10px;
-    font-family: runescape;
-    font-size: 25px;
-    color: $color-text-green;
-  }
-
-  &__description {
-    margin-bottom: 10px;
-
-  }
-  &__list {
-    list-style: disc inside;
-  }
-
-  &__answer {
-    padding-left: 20px;
-    height: auto;
-  }
-}

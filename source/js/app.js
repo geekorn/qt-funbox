@@ -6,7 +6,11 @@ window.onload = function () {
   };
 
   const products = document.querySelector('.products');
+  if (!products) return;
+
   const checkedCard = products.querySelectorAll('.product__checkbox');
+
+  
 
   checkedCard.forEach(function(input) {
     const card = input.parentNode.querySelector('.card');
